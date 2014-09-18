@@ -1,0 +1,21 @@
+<h1>All Questions</h1>
+
+<%= link_to 'New Questions', new_question_path %>
+
+<% @questions.each do |question| %>
+
+    <ul>
+      <li><a href="/questions/<%=question.id%>">Title: <%= question.title%></a></li>
+      <li><%= question.created_at%></li>
+      <%= link_to 'Edit', edit_question_path(question) %>
+      <%= link_to 'Destroy', question_path(question),
+                    method: :delete, data:{ confirm: 'Are you sure?'} %>
+
+    </ul>
+    <hr \>
+  <% end %>
+
+
+
+
+
